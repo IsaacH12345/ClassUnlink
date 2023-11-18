@@ -3,7 +3,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const menu = document.querySelector(".menu");
 
     menuButton.addEventListener("click", function () {
-        menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        if (menu.style.display === "block" || menu.style.display === "") {
+            menu.style.display = "none";
+        } else {
+            menu.style.display = "block";
+        }
     });
 
     document.addEventListener("click", function (event) {
